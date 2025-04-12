@@ -1,0 +1,23 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="column">
+            <h1>This is the About Page</h1>
+            <p> Here lies some more text.</p>
+            <p> this is more text</p>
+            
+            <p> this came from the template: {{index .StringMap "test"}}</p>
+
+            <p>
+                {{if ne (index .StringMap "remote_ip") ""}}
+                    Your remote ip address is {{index .StringMap "remote_ip"}}
+                {{else}}
+                    I dont know your ip address yet. <a href="/"> Home page</a>
+                {{end}}
+            </p>
+            </div>
+        </div>
+    </div>
+{{end}}
